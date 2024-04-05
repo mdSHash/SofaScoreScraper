@@ -38,7 +38,7 @@ c = conn.cursor()
 
 # Create table if not exists
 c.execute('''CREATE TABLE IF NOT EXISTS tennis_matches
-             (event_id INTEGER, tournament TEXT, round TEXT, home_team TEXT, away_team TEXT, match_progress TEXT, 
+             (tournament TEXT, round TEXT, home_team TEXT, away_team TEXT, match_progress TEXT, 
              period TEXT, home_score TEXT, away_score TEXT, statistic_group TEXT, statistic_name TEXT, 
              home_stat TEXT, away_stat TEXT)''')
 conn.commit()
@@ -91,7 +91,7 @@ while True:
                         print(f"{stat_name}: {home_stat} - {away_stat}")
                         # Insert data into SQLite database
                         c.execute("INSERT INTO tennis_matches VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
-                                  ( event['tournament']['name'], event['roundInfo']['name'], event['homeTeam']['name'],
+                                  (event['tournament']['name'], event['roundInfo']['name'], event['homeTeam']['name'],
                                    event['awayTeam']['name'], event['status']['description'], 'ALL',
                                    event['homeScore']['current'], event['awayScore']['current'], group, stat_name,
                                    home_stat, away_stat))
