@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tennis Matches</title>
+</head>
+<body>
+    <h1>Tennis Matches</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Tournament</th>
+                <th>Round</th>
+                <th>Home Team</th>
+                <th>Away Team</th>
+                <th>Match Progress</th>
+                <th>Period</th>
+                <th>Home Score</th>
+                <th>Away Score</th>
+                <th>Statistic Group</th>
+                <th>Statistic Name</th>
+                <th>Home Stat</th>
+                <th>Away Stat</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for match in matches %}
+            <tr>
+                <td>{{ match[0] }}</td>
+                <td>{{ match[1] }}</td>
+                <td>{{ match[2] }}</td>
+                <td>{{ match[3] }}</td>
+                <td>{{ match[4] }}</td>
+                <td>{{ match[5] }}</td>
+                <td>{{ match[6] }}</td>
+                <td>{{ match[7] }}</td>
+                <td>{{ match[8] }}</td>
+                <td>{{ match[9] }}</td>
+                <td>{{ match[10] }}</td>
+                <td>{{ match[11] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
